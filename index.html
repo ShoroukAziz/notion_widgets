@@ -1,57 +1,167 @@
-<html> 
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Greeting Message</title> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
     <style>
-#lbl {
-    font-family: monospace;
-    font-size: xx-large;
-    color: #626262;
-    padding: 5px;
-    border: 1px solid #ececec;
-    text-align: center;
-    line-height: 1.5;
-    height:85%
 
+        /*CSS RESETS*/
 
-}
-#date{
-    font-size:large;
-}
 body{
-    background-color: aliceblue;
+    background-color: #fff;
 }
+
+h1 {
+    margin-top: 0;
+}
+
+
+/*CSS START*/
+
+.full-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card {
+    padding: 10px 50px 10px 50px;
+    border-radius: 10px;
+    background: #009688;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 2px 2px 1px 0px #295C7B;
+}
+
+.card:hover {
+    margin-top: 2px;
+    box-shadow: none;
+}
+
+.clock {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    padding-left: 20px;
+}
+
+.time {
+    display: inline-block;
+    min-width: 37px;
+}
+
+.colon {
+    font-size: 1.1em;
+    display: inline-block;
+}
+
+.date {
+    display: inline-block;
+    min-width: 162px;
+    padding-right: 30px;
+    border-right: 2px solid #295C7B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+}
+.greet{
+    
+    min-width: 162px;
+    /* padding-right: 30px; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+}
+
     </style>
 </head>
 <body>
-    <div id="lbl"></div>
-</body>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+<div class="full-table">
+  <div class="table-cell">
+    
+    <div class="card">
+        <div class="greet" id="greet"></div>
+      <div class="date" id="date"></div>
+      <div class="clock">
+        <div class="time" id="hour"></div>
+        <div class="colon">:</div>
+        <div class="time" id="min"></div>
+        <div class="colon">:</div>
+        <div class="time" id="sec"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
 
 <script>
-    var weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+    function date() {
+var today = new Date();
+document.getElementById('date').innerHTML = today.toDateString();
+}
 
-    
-    var today = new Date();
-    var hrs = today.getHours();
-    var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
 
-    var greet;
-
-    if (hrs < 12)
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
+if(twelveHour(today.getHours()) >12){
+    seconds+=" pm"
+}
+else{
+    seconds+=" am"
+}
+hrs = today.getHours();
+if (hrs < 12)
         greet = 'Good Morning  ';
     else if (hrs >= 12 && hrs <= 17)
         greet = 'Good Afternoon ';
     else if (hrs >= 17 && hrs <= 24)
         greet = 'Good Evening  ';
+// console.log(today.toLocaleTimeString());
+document.getElementById('greet').innerHTML = greet;
+document.getElementById('hour').innerHTML = hour;
+document.getElementById('min').innerHTML = minutes;
+document.getElementById('sec').innerHTML = seconds;
+}
 
-    document.getElementById('lbl').innerHTML =
-        greet+=`<div id="date"> It's ${date}</div>`;
-</script> 
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+clock();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+// END
+</script>
+
+</body>
 </html>
