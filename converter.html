@@ -60,6 +60,7 @@ button:hover{
 
 .categoryButtons{
 	margin: auto;
+    width: fit-content;
 
 	
 }
@@ -129,27 +130,20 @@ input {
 	background-color: #b3b3b3;
 }
 
-@media only screen and (min-width: 320px) and (max-width:480px), (orientation: portrait) {
-
-	#toImperial, #toMetric, #toCelsius, #toFahrenheit, #toKelvin, #mileToKm, #kmToMile, #hours, #days {
-		font-size: 156px;
-	}
-	
-}
-
 
     </style>
 
   </head>
   <body>
     <div class="container">
-    <div class="categoryButtons">
-      <button id="mass" title="Mass"><i class="fas fa-balance-scale fa-2x"></i></button>
-	  <button id="volume" title="Volume"><i class="fas fa-glass-whiskey fa-2x"></i></button>
-	  <button id="temperature" title="Temperature"><i class="fa fa-thermometer-2 fa-2x"></i></button>
 
-	  </div>
 	  <div class="content">
+        <div class="categoryButtons">
+            <button id="mass" title="Mass"><i class="fas fa-balance-scale fa-2x"></i></button>
+            <button id="volume" title="Volume"><i class="fas fa-glass-whiskey fa-2x"></i></button>
+            <button id="temperature" title="Temperature"><i class="fa fa-thermometer-2 fa-2x"></i></button>
+      
+            </div>
 	<input type="number" style="display: none" placeholder="Enter a number" >
 
 	 <div class="metricImperial">
