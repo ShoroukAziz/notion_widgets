@@ -6,9 +6,8 @@
   <title>Document</title>
 
 
-  
   <style>
-        body{
+    body{
       background-color: aliceblue;
     }
     .section {
@@ -69,12 +68,9 @@
             }
 
             .buttons button:nth-child(4){
-                background-color: #9e9e9e;
+                background-color: rgb(201, 89, 69);
             }
 
-            .buttons button:nth-child(5){
-                background-color: #ffc107;
-            }
   </style>
 
 </head>
@@ -87,14 +83,18 @@
       <input type="text" id="input2" name="input2" placeholder="seconds">
 
       <button onclick="start()">▶</button>
-      <button onclick="stop()">❚❚</button>
       <button onclick="cancel()">∎</button>
     </div>
+    
   </section>
 </body>
 
 
 <script>
+  function beep() {
+    var snd = new Audio("bell.mp3");  
+    snd.play();
+}
   var timer;
 
 
@@ -105,7 +105,18 @@ function start(){
 
 minute = parseInt(input)
 seconds1 = parseInt(input2)
+if( isNaN(seconds1)){
+  seconds1 = 0
+}
+if( isNaN(minute)){
+  minute = 0
+}
 seconds = minute*60+seconds1
+
+if(seconds==0){
+ 
+  return;
+}
 
 var textSec = "00"
 textSec = seconds1
@@ -128,20 +139,27 @@ display.innerHTML = minute + ':' + textSec
 
         display.innerHTML = Math.floor(seconds/60) + ':' + textSec
 
-        if(seconds == 0)
-            clearInterval(timer)
+        if(seconds == 0){
+          console.log('d')
+          beep();
+        clearInterval(timer)
+        }
+                
     }, 1000)
+
 }
 
-function stop(){
-    clearInterval(timer)
-}
 
 function cancel(){
-    console.log("asdasd");
     clearInterval(timer)
-    display.innerHTML = minute + ':00'
+    display.innerHTML ='00:00'
     seconds = minute * 60
 }
+
+
+
 </script>
+
+
+
 </html>
