@@ -118,7 +118,7 @@ var today = new Date();
 var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
 var seconds = zeros(today.getSeconds());
-if(twelveHour(today.getHours()) >12){
+if(today.getHours() >=12){
     seconds+=" pm"
 }
 else{
