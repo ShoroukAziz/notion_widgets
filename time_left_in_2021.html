@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <title>Time Left in 2020</title>
+    <style>
+        
+        body{
+            text-align: center;
+            font-family: 'Fjalla One', sans-serif;
+            background-color: #fff;
+        }
+        .box{
+            display: inline-block;
+            display: inline-block;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #days{
+            background-color:#0f4d4f;
+        }
+        #hours{
+            background-color:#4CAF50;
+        }
+        #minutes{
+            background-color:#76250b;
+        }
+        h2{
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="counter">
+        <h2>
+            Time left in 2021
+        </h2>    
+        
+            <h2 class="box" id="days"></h2>
+            <h2 class="box" id="hours"></h2>
+            <h2 class="box" id="minutes"></h2>
+
+    </div>
+    
+
+
+
+
+<script>
+    function CountDownTimer  (date) {
+    left_days = document.getElementById("days");
+    left_hours = document.getElementById("hours");
+    left_minutes = document.getElementById("minutes");
+
+    end = new Date(date);
+    _second = 1000;
+    _minute = _second * 60;
+    _hour = _minute * 60;
+    _day = _hour * 24;
+    }
+    function showRemaining (){
+    now = new Date();
+    distance = end - now;
+    distance2 = new Date("01/01/2021 00:00 AM") - now
+    if (distance <= 0 ){
+      clearInterval (timer)
+      document.getElementById("counter").innerHTML = "<h2>Nothing! It's Over<h2>";
+      return
+    }
+    else if (distance2 > 0  ){
+      clearInterval (timer)
+      document.getElementById("counter").innerHTML =  "<h2>2021 Didn't Start yet!</h2>";
+      return
+    } 
+    days = Math.floor(distance / _day)
+    hours = Math.floor((distance % _day) / _hour)
+    minutes = Math.floor((distance % _hour) / _minute)
+    left_days.innerHTML = days + " days "
+    left_hours.innerHTML = hours + " hours "
+    left_minutes.innerHTML = minutes + " mins "
+    }
+    
+
+timer = setInterval (showRemaining, 1) 
+CountDownTimer( "01/01/2022 00:00 AM")
+</script>
+</body>
+</html>
