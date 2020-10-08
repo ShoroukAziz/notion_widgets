@@ -38,6 +38,8 @@
     </style>
 </head>
 <body>
+    
+    <div id="counter">
     <h2>
         Time left in 2020
     </h2>
@@ -45,7 +47,7 @@
         <h2 class="box" id="days"></h2>
         <h2 class="box" id="hours"></h2>
         <h2 class="box" id="minutes"></h2>
-
+    </div>
 
 
 
@@ -66,7 +68,7 @@
     distance = end - now;
     if (distance <= 0){
       clearInterval (timer)
-      selector.innerHTML = "Nothing! It's Over";
+      document.getElementById("counter").innerHTML = "<h2>Nothing! It's Over</h2>";
       return
     } 
     days = Math.floor(distance / _day)
