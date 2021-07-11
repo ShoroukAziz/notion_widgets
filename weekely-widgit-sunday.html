@@ -1,0 +1,268 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weekly widget</title>
+
+
+    <!-- clock style -->
+
+ <style>
+body{
+    background-color: #fff;
+    line-height: 1.6;
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.full-table {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card {
+    padding: 10px 25px 10px 25px;
+    
+    background: rgba(235, 236, 237, 0.3);
+    width: 100%;
+    color: #000;
+   
+}
+
+
+.clock {
+    display: inline;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+   
+}
+
+.time {
+    display: inline;
+    min-width: 37px;
+}
+
+.colon {
+    font-size: 1.1em;
+    display: inline-block;
+}
+
+.date {
+    display: inline;
+    min-width: 162px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    padding-right: 30px;
+}
+.greet{
+    
+    display:inline;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+     padding-right: 30px;
+}
+
+   /* Time left style   */
+
+   .h3{
+    margin: 0 ;
+    font-family: 'Bebas Neue';
+    font-size: 2em;
+    font-weight: 100;
+   }
+
+        .box{
+            display: inline-block;
+            display: inline-block;
+            color: #fff;
+            padding: 10px;
+            min-width: 60px;
+        }
+        #days{
+            background-color:#3e4545;
+        }
+        #hours{
+            background-color:#556363;
+        }
+        #minutes{
+            background-color:#6d7c7c;
+        }
+        h2{
+            display: inline-block;
+            margin-right: 10px;
+            margin-block-start: 5px;
+        }
+        h3{
+            text-align: center;
+            
+        }
+        .small{
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+
+    </style>
+</head>
+<body>
+
+   
+<div class="content">
+
+    <div class="full-table">
+        <div class="table-cell" style="width: 70%;">
+          
+          <div class="card">
+              <div class="greet" id="greet"></div>
+            <div class="date" id="date"></div>
+            <div class="clock">
+              <div class="time" id="hour"></div>
+              <div class="colon">:</div>
+              <div class="time" id="min"></div>
+              <div class="colon">:</div>
+              <div class="time" id="sec"></div>
+            </div>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/31d2029d92/alexandria/" data-label_1="ALEXANDRIA" data-label_2="WEATHER" data-days="3" data-theme="gray" >ALEXANDRIA WEATHER</a>
+
+          </div>
+          
+        </div>
+        <div class="table-cell" style="width: 30%;">
+          
+            <div class="card">
+
+                <div class="counter" id="counter">
+      
+                    <h3 class="h3">
+                        Time left in This Week
+                   </h3>
+                    <h2 class="box" id="days"></h2>
+                    <h2 class="box" id="hours"></h2>
+                    <h2 class="box" id="minutes"></h2>
+
+                </div>
+          
+            </div>
+            
+          </div>
+      </div>
+      
+      
+      <!-- ------------------------------- -->
+      
+
+</div>
+
+
+<!-- --------------------------------- Scripts----------------------------- -->
+
+<!-- Greetings and date -->
+<script>
+    function date() {
+var today = new Date();
+document.getElementById('date').innerHTML = today.toDateString();
+}
+
+
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
+if(today.getHours() >=12){
+    seconds+=" pm"
+}
+else{
+    seconds+=" am"
+}
+hrs = today.getHours();
+if (hrs < 12)
+        greet = 'Good Morning  ';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon ';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening  ';
+// console.log(today.toLocaleTimeString());
+document.getElementById('greet').innerHTML = greet;
+document.getElementById('hour').innerHTML = hour;
+document.getElementById('min').innerHTML = minutes;
+document.getElementById('sec').innerHTML = seconds;
+}
+
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+clock();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+// END
+</script>
+
+<!------------ Time Left ------------------>
+
+<script>
+    function CountDownTimer  () {
+    left_days = document.getElementById("days");
+    left_hours = document.getElementById("hours");
+    left_minutes = document.getElementById("minutes");
+ 
+    }
+    function showRemaining (){
+    now = new Date();
+    // days_in_this_month = new Date( now.getFullYear(), now.getMonth()+1, 0).getDate(); 
+    // week starts on sunday
+    days = 6 - now.getDay();
+    hours = 23 - now.getHours();
+    minutes = 59 - now.getMinutes();
+    left_days.innerHTML = days + "<br> <span style=\"color:#f58f70\" class=\"small\"> days </span>"
+    left_hours.innerHTML = hours + "<br> <span style=\"color:#5ebcfc\" class=\"small\"> hours</span>";
+    left_minutes.innerHTML = minutes + "<br> <span style=\"color:##dcdcdc\" class=\"small\">mins</span>";
+    }
+
+timer = setInterval (showRemaining, 1000) 
+CountDownTimer() ;
+</script>
+
+<!-- forcast -->
+<script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+</body>
+</html>
