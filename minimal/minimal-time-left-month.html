@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <title>Time Left in this month</title>
+    <style>
+        
+        body{
+            text-align: center;
+            font-family: monospace;
+            background-color: #fff;
+        }
+        .box{
+            display: inline-block;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 40px;
+            height: 40px;
+            border: 3px solid #000000;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 0px #000000;
+        }
+      
+        h2{
+            display: inline-block;
+            margin-right: 10px;
+            margin-block-start: 5px;
+        }
+        h3{
+            text-align: left;
+            display: inline-block;
+            
+        }
+        .small{
+            font-size: 15px;
+            font-weight: lighter;
+        }
+
+        #days{
+            background-color:  #f3fff3; ;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="counter">
+
+        <h2 class="box" id="days"></h2>
+        <h2 class="box" id="hours"></h2>
+        <h2 class="box" id="minutes"></h2>
+        <h2 class="box" id="seconds"></h2>
+        <h3>
+            Left in <br>This Month
+        </h3>
+    </div>
+
+
+
+<script>
+    function CountDownTimer  () {
+    left_days = document.getElementById("days");
+    left_hours = document.getElementById("hours");
+    left_minutes = document.getElementById("minutes");
+    left_seconds = document.getElementById("seconds");
+ 
+    }
+    function showRemaining (){
+    now = new Date();
+    days_in_this_month = new Date( now.getFullYear(), now.getMonth()+1, 0).getDate(); 
+    days = days_in_this_month- now.getDate();
+    hours = 23 - now.getHours();
+    minutes = 59 - now.getMinutes();
+    seconds = 59 - now.getSeconds();
+    left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
+    left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
+    left_minutes.innerHTML = minutes + "<br> <span class=\"small\">mins</span>";
+    left_seconds.innerHTML = seconds + "<br> <span class=\"small\">secs</span>";
+    }
+
+timer = setInterval (showRemaining, 1000) 
+CountDownTimer() ;
+</script>
+</body>
+</html>
