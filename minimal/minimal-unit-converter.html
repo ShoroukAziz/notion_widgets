@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<!-- original : https://codepen.io/jenjen9/pen/yLBNOKB -->
+<html>
+  <head>
+    <title>Unit Converter</title>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        body{
+	background-color:#ffffff;
+   
+    min-height: 400px;
+    width: 380px;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 0px #000000;
+}
+
+.container{
+	margin: 0 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+   
+}
+
+
+h1 {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 40px;
+	text-align:center;
+	color: #fff;
+}
+
+
+
+button {
+	border-radius: 9px;
+	background-color: #999;
+	margin: 10px;
+	font-family: 'Oxygen', sans-serif;
+	border: none;
+	padding: 10px ;
+	color: #fff;
+	text-align: center;
+	width: 90px;
+	
+}
+.categoryButtons button{
+    background-color: #f5f5f5;
+    color:black;
+    width: 60px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 0px #000000;
+    border: 2px solid black;
+
+}
+
+.categoryButtons button:hover{
+	background-color: #cff7f8;
+}
+
+.categoryButtons{
+	margin: auto;
+    width: fit-content;
+
+	
+}
+
+.content{
+	width: 400;
+	margin: auto;
+	
+}
+
+ .metricImperial, .temp-unit-buttons, .speed-units, .time-units{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	align-content: center;
+	
+}
+
+#toImperial, #toMetric, #toCelsius, #toFahrenheit, #toKelvin, #mileToKm, #kmToMile, #hours, #days {
+	background-color:#000000;
+	font-size: 15px;
+    width: 150px;   
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 0px #000000;
+}
+
+#toImperial:hover, #toMetric:hover, #toCelsius:hover, #toFahrenheit:hover, #toKelvin:hover, #mileToKm:hover, #kmToMile:hover, #hours:hover, #days:hover{
+    color:black;
+	background-color: #cff7f8;
+}
+
+input {
+	width: 300px;
+	padding: 10px;
+	border-radius: 9px;
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	margin: auto;
+    border: 2px solid black;
+
+}
+
+
+#output {
+    font-family: monospace;
+    font-size: 15px;
+    text-align: left;
+    margin: auto;
+    padding: 10px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+
+
+#reset{
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 0px #000000;
+    border: 2px solid black;
+    color:rgb(0, 0, 0);
+	margin: 15px auto;
+    width: 325px;
+    background-color: #f5f5f5;
+
+
+}
+
+#reset:hover{
+    background-color: #cff7f8;
+}
+
+
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+	  <div class="content">
+        <div class="categoryButtons">
+            <button id="mass" title="Mass"><i class="fas fa-balance-scale fa-2x"></i></button>
+            <button id="volume" title="Volume"><i class="fas fa-glass-whiskey fa-2x"></i></button>
+            <button id="temperature" title="Temperature"><i class="fa fa-thermometer-2 fa-2x"></i></button>
+      
+            </div>
+	<input type="number" style="display: none" placeholder="Enter a number" >
+
+	 <div class="metricImperial">
+	   <button id="toMetric" style="display:none">Imperial to metric</button>
+	   <button id="toImperial" style="display:none">Metric to imperial</button>
+	 </div>
+	 <div class="temp-unit-buttons">
+	   <button id="toCelsius" style="display:none">Celsius</button>
+	   <button id="toFahrenheit" style="display:none">Fahrenheit</button>
+	   <!-- <button id="toKelvin" style="display:none">Kelvin</button> -->
+	 </div>
+	 <div class="speed-units">
+	   <button id="mileToKm" style="display:none">mph</button>
+	   <button id="kmToMile" style="display:none">km/hr</button>
+	 </div>
+	 <div class="time-units">
+	   <button id="hours" style="display:none">Hours</button>
+	   <button id="days" style="display:none">Days</button>
+	 </div>
+	 </div>
+    </div>
+   
+    
+
+    <br>
+	<div id="output" style="display:none"></div>
+	
+	<div>
+	  <input type="reset" id="reset" style="display:none">
+	</div>
+
+  
+  
+   </div>
+   <script >
+
+
+let input = document.querySelector('input');
+let output = document.getElementById('output');
+const toMetric = document.getElementById('toMetric');
+const toImperial = document.getElementById('toImperial');
+const toCelsius = document.getElementById('toCelsius');
+const toFahrenheit = document.getElementById('toFahrenheit');
+// const toKelvin = document.getElementById('toKelvin');
+const mileToKm = document.getElementById('mileToKm');
+const kmToMile = document.getElementById('kmToMile');
+const hours = document.getElementById('hours');
+const days = document.getElementById('days');
+const resetButton = document.getElementById('reset');
+
+
+
+const massButton = document.getElementById('mass').addEventListener('click', (e) => {
+	input.style.display = 'block';
+	toFahrenheit.style.display = 'none';
+	toCelsius.style.display = 'none';
+	// toKelvin.style.display = 'none';
+	hours.style.display = 'none';
+	days.style.display = 'none';
+	mileToKm.style.display = 'none';
+	kmToMile.style.display = 'none';
+	toMetric.style.display = 'block';
+	toImperial.style.display='block';
+	resetButton.style.display = 'block';
+	toMetric.addEventListener('click', (e) => {
+		output.innerHTML = `${input.value} ounce &rarr; ${massUnits.imperial.ounce()} gram <br>
+		${input.value} pound &rarr; ${massUnits.imperial.pound()} kg <br>
+		${input.value} stone &rarr; ${massUnits.imperial.stone()} kg <br>
+		${input.value} ton &rarr; ${massUnits.imperial.imperialTon()} tonne
+		`;
+	});
+	toImperial.addEventListener('click', (e) => {
+		output.innerHTML = `${input.value} gram &rarr; ${massUnits.metric.gram()} ounce <br>
+		${input.value} kg &rarr; ${massUnits.metric.kglb()} pound <br>
+		${input.value} kg &rarr; ${massUnits.metric.kgst()} stone <br>
+		${input.value} tonne &rarr; ${massUnits.metric.metricTonne()} ton 
+		`;
+	});
+	output.style.display = 'block';
+	output.innerHTML = "";
+	input.value = null;
+});
+
+const volumeButton = document.getElementById('volume').addEventListener('click', (e) => {
+	input.style.display = 'block';
+	toFahrenheit.style.display = 'none';
+	toCelsius.style.display = 'none';
+	// toKelvin.style.display = 'none';
+	hours.style.display = 'none';
+	days.style.display = 'none';
+	mileToKm.style.display = 'none';
+	kmToMile.style.display = 'none';
+	toMetric.style.display = 'block';
+	toImperial.style.display='block';
+	resetButton.style.display = 'block';
+	toMetric.addEventListener('click', (e) => {
+		output.innerHTML = `${input.value} fl. ounce &rarr; ${volumeUnits.imperial.fluidOunce()} ml <br>
+		${input.value} pint &rarr; ${volumeUnits.imperial.pint()} litre <br>
+		${input.value} quart &rarr; ${volumeUnits.imperial.quart()} litre <br>
+		${input.value} gallon &rarr; ${volumeUnits.imperial.gallon()} litre
+		`;
+	});
+	toImperial.addEventListener('click', (e) =>{
+		output.innerHTML = `${input.value} ml &rarr; ${volumeUnits.metric.ml()} fluid ounce <br>
+		${input.value} litre &rarr; ${volumeUnits.metric.lToPt()} pint <br>
+		${input.value} litre &rarr; ${volumeUnits.metric.lToQt()} quart <br>
+		${input.value} litre &rarr; ${volumeUnits.metric.lToGallon()} gallon
+		`;
+	});
+	output.style.display = 'block';
+	output.innerHTML = "";
+	input.value = null;
+});
+
+const temperatureButton = document.getElementById('temperature').addEventListener('click', (e) => {
+	toMetric.style.display = 'none';
+	toImperial.style.display = 'none';
+	hours.style.display = 'none';
+	days.style.display = 'none';
+	mileToKm.style.display = 'none';
+	kmToMile.style.display = 'none';
+	input.style.display = 'block';
+	toCelsius.style.display = 'block';
+	toFahrenheit.style.display = 'block';
+	// toKelvin.style.display = 'block';
+	resetButton.style.display = 'block';
+	toCelsius.addEventListener('click', (e) =>{
+		output.innerHTML =`${input.value} &deg;F &rarr; ${temperatureUnits.fahrenheit.fToC()} &deg;C <br>
+		${input.value} &deg;K &rarr; ${temperatureUnits.kelvin.kToC()} &deg;C`;
+		});
+	toFahrenheit.addEventListener('click', (e) =>{
+		output.innerHTML = `${input.value} &deg;C &rarr; ${temperatureUnits.celsius.cToF()} &deg;F <br>
+		${input.value} &deg;K &rarr; ${temperatureUnits.kelvin.kToF()} &deg;F <br>
+		`;
+	});
+	// toKelvin.addEventListener('click', (e) =>{
+	// 	output.innerHTML = `${input.value} &deg;F &rarr; ${temperatureUnits.fahrenheit.fToK()} &deg;K <br>
+	// 	${input.value} &deg;C &rarr; ${temperatureUnits.celsius.cToK()} &deg;K <br>
+	// 	`;
+	// });
+	output.style.display = 'block';
+	output.innerHTML = "";
+	input.value = null;
+		
+});
+
+
+resetButton.addEventListener('click', (e) =>{
+	location.reload();
+});
+
+
+const lengthUnits = {
+	imperial: {
+		inch(){
+			let inchToMm = (input.value * 25.4).toFixed(2);
+			return inchToMm;
+		},
+		foot(){
+			let footToCm = (input.value * 30.48).toFixed(2);
+			return footToCm;
+		},
+		yard(){
+			let yardToM = (input.value / 1.094).toFixed(2);
+			return yardToM;
+		},
+		mile(){
+			let mileToKm = (input.value * 1.609).toFixed(2);
+			return mileToKm;
+		}
+	},
+	metric: {
+		mm(){
+			let mmToInch  = (input.value / 25.4).toFixed(2);
+			return mmToInch;
+		},
+		cm(){
+			let cmToFoot = (input.value / 30.48).toFixed(2);
+			return cmToFoot;
+		},
+		m(){
+			let mToYard = (input.value * 1.094).toFixed(2);
+			return mToYard;
+		},
+		km(){
+			let kmToMile = (input.value / 1.609).toFixed(2);
+			return kmToMile;
+		}
+	}
+};
+
+const massUnits = {
+	imperial: {
+		ounce(){
+			let ounceToGram = (input.value * 28.35).toFixed(2);
+			return ounceToGram;
+		},
+		pound(){
+			let poundToKg = (input.value / 2.205).toFixed(2);
+			return poundToKg;
+		},
+		stone(){
+			let stoneToKg = (input.value * 6.35).toFixed(2);
+			return stoneToKg;
+		},
+		imperialTon(){
+			let tonToTonne = (input.value * 1.016).toFixed(2);
+			return tonToTonne;
+		}
+	},
+	metric: {
+		gram(){
+			let gramToOunce = (input.value / 28.35).toFixed(2);
+			return gramToOunce;
+		},
+		kglb(){
+			let kgToPound = (input.value * 2.205).toFixed(2);
+			return kgToPound;
+		},
+		kgst(){
+			let kgToStone = (input.value / 6.35).toFixed(2);
+			return kgToStone;
+		},
+		metricTonne(){
+			let tonneToTon = (input.value / 1.016).toFixed(2);
+			return tonneToTon;
+		}
+	}
+};
+
+const volumeUnits = {
+	imperial: {
+		fluidOunce(){
+			let flozToMl = (input.value * 28.413).toFixed(2);
+			return flozToMl;
+		},
+		pint(){
+			let pintToL = (input.value / 1.76).toFixed(2);
+			return pintToL;
+		},
+		quart(){
+			let quartToL = (input.value * 1.137).toFixed(2);
+			return quartToL;
+		},
+		gallon(){
+			let gallonToL = (input.value * 4.546).toFixed(2);
+			return gallonToL;
+		}
+	},
+	metric: {
+		ml(){
+			let mlToFloz = (input.value / 28.413).toFixed(2);
+			return mlToFloz;
+		},
+		lToPt(){
+			let lToPt = (input.value * 1.76).toFixed(2);
+			return lToPt;
+		},
+		lToQt(){
+			let lToQt = (input.value / 1.137).toFixed(2);
+			return lToQt;
+		},
+		lToGallon(){
+			let lToGallon = (input.value / 4.546).toFixed(2);
+			return lToGallon;
+		}
+		
+	}
+};
+
+const temperatureUnits = {
+	fahrenheit: {
+		fToC(){
+			let c = ((input.value - 32)* 5/9).toFixed(2);
+			return c;
+			
+		},
+		fToK(){
+			let k = ((input.value - 32) * 5/9 + 273.15).toFixed(2);
+			return k;
+		}
+	},
+	celsius: {
+		cToF(){
+			let f = ((input.value * 9/5) + 32).toFixed(2);
+			return f;
+		},
+		cToK(){
+			//let kconst = 273.15;
+			let ck = (parseFloat(input.value) + 273.15).toFixed(2);
+			return ck;
+			
+		}
+	},
+	kelvin: {
+		kToF(){
+			let kf = ((input.value - 273.15)* 9/5 + 32).toFixed(2);
+			return kf;
+		},
+		kToC(){
+			let kc = (input.value - 273.15).toFixed(2);
+			return kc;
+		}
+	}
+	
+};
+
+const speedUnits = {
+	mphToKmph(){
+		let kmph = (input.value * 1.609).toFixed(2);
+		return kmph;
+	},
+	kmphToMph() {
+		let mph = (input.value / 1.609).toFixed(2);
+		return mph;
+	}
+};
+
+const timeUnits = {
+	hours: {
+		minTohr(){
+			let mhr = (input.value/60).toFixed(3);
+			return mhr;
+		},
+		dayTohr(){
+			let dhr = input.value*24;
+			return dhr;
+		}
+	},
+	days: {
+		minToDay(){
+			let mday = (input.value / 1440).toFixed(4);
+			return mday;
+		},
+		hrToDay(){
+			let hrday = (input.value / 24).toFixed(2);
+			return hrday;
+		}
+	}
+};
+
+
+
+
+   </script>
+  </body>
+</html>
