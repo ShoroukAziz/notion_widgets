@@ -145,7 +145,6 @@ class App extends Component {
   render() {
     return /*#__PURE__*/(
       React.createElement("div", null, /*#__PURE__*/
-      React.createElement("div", { className: "title" }, "Pomodoro Clock"), /*#__PURE__*/
       React.createElement("div", { className: "pomodoro" }, /*#__PURE__*/
       React.createElement("div", null, /*#__PURE__*/
       React.createElement("button", { onClick: this.increaseTime }, "+")), /*#__PURE__*/
