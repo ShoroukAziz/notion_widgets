@@ -1,7 +1,7 @@
 #root {
   background: #EEEBD0;
-  width: 500px;
-  height: 330px;
+  width: 400px;
+  height: 250px;
   margin: auto;
   border-radius: 1%;
   box-shadow: 5px 5px 2px #888888;
@@ -63,11 +63,12 @@ body {
 .start-pause button {
   border: none;
   background: #01ABAA;
-  font-size: 45px;
   font-family: VT323;
   font-weight: bold;
-  margin: 30px;
+  margin: 15px;
   box-shadow: 3px 3px 2px #888888;
+  width: 90px;
+  font-size: 25px;
 }
 
 .start-pause button:active {
@@ -86,11 +87,13 @@ body {
 .reset button {
   border: none;
   background: #DC5754;
-  font-size: 45px;
+  font-size: 25px;
   font-family: VT323;
   font-weight: bold;
   box-shadow: 3px 3px 2px #888888;
   margin-left: 115px;
+  width: 90px;
+
 }
 
 .reset button:active {
