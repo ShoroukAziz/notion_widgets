@@ -1,6 +1,6 @@
 #root {
   background: #EEEBD0;
-  width: 400px;
+  width: 900px;
   height: 250px;
   margin: auto;
   border-radius: 1%;
@@ -16,7 +16,7 @@ body {
 
 
 .pomodoro {
-  height: 120px;
+  height: 100px;
   display: flex;
   background: #FEDC3D;
   justify-content: center;
