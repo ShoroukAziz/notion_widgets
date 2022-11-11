@@ -4,14 +4,13 @@
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background-color: #c2e6e8;
+ // background-color: #c2e6e8;
 }
 
 #root {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 button,
