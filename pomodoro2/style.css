@@ -1,0 +1,139 @@
+#root {
+  width: 500px;
+  height: 330px;
+  margin: auto;
+  background: #EEEBD0;
+  border-radius: 1%;
+  box-shadow: 5px 5px 2px #888888;
+  margin-top: 80px;
+}
+
+body {
+  background: #01ABAA;
+  color: #3A3335;
+  font-family: VT323;
+  font-weight: bold;
+}
+
+
+.pomodoro {
+  height: 120px;
+  display: flex;
+  background: #FEDC3D;
+  justify-content: center;
+  box-shadow: 1px 1px 1px #888888;
+}
+
+
+.pomodoro button {
+  padding: 5px 10px 5px 10px;
+  margin-top: 90%;
+  border: none;
+  background: #01ABAA;
+  font-size: 45px;
+  font-family: VT323;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 3px 3px 2px #888888;
+}
+
+.pomodoro button:active {
+  background: #079fb0; 
+  box-shadow: 0 0 0 transparent;
+}
+
+.pomodoro button:focus {
+  outline:0;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.pomodoro .timer {
+  font-size: 120px;
+  margin: 0 20px;
+}
+
+.start-pause {
+  display: flex;
+  justify-content: center;
+}
+
+.start-pause button {
+  border: none;
+  background: #01ABAA;
+  font-size: 45px;
+  font-family: VT323;
+  font-weight: bold;
+  margin: 30px;
+  box-shadow: 3px 3px 2px #888888;
+}
+
+.start-pause button:active {
+   background: #079fb0; 
+  box-shadow: 0 0 0 transparent;
+}
+
+.start-pause button:focus {
+  outline: 0;
+}
+
+.reset {
+  text-align: center;
+}
+
+.reset button {
+  border: none;
+  background: #DC5754;
+  font-size: 45px;
+  font-family: VT323;
+  font-weight: bold;
+  box-shadow: 3px 3px 2px #888888;
+  margin-left: 115px;
+}
+
+.reset button:active {
+  box-shadow: 0 0 0 transparent;
+}
+
+.reset button:focus {
+  outline: 0;
+}
+
+.contain-it {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.break-length {
+  margin-left: 30px;
+}
+
+.break-time {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  font-size: 15px;
+}
+
+.break-time button {
+  border: none;
+  background: #DC5754;
+  box-shadow: 1px 1px 1px #888888;
+}
+
+.break-time button:active {
+  box-shadow: 0 0 0 transparent;
+}
+
+.break-time button:focus {
+  outline: 0;
+}
+
+.break-text {
+  font-size: 20px;
+  padding: 5px;
+}
