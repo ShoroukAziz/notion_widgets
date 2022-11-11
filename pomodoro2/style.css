@@ -29,7 +29,7 @@ body {
   margin-top: 90%;
   border: none;
   background: #01ABAA;
-  font-size: 45px;
+  font-size: 35px;
   font-family: VT323;
   font-weight: bold;
   text-align: center;
@@ -51,7 +51,7 @@ body {
 }
 
 .pomodoro .timer {
-  font-size: 120px;
+  font-size: 100px;
   margin: 0 20px;
 }
 
