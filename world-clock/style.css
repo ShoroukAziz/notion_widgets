@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Mali:700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  background: #f8f5f1;
+  color: #3a3a3a;
+  display: flex;
+  font-family: "Mali", sans-serif;
+}
+/* center the visualization in the viewport */
+.viz {
+  margin: auto;
+}
+/* size the svg to cover a considerable portion of the viewport */
+.viz svg {
+  width: 80vmin;
+  height: auto;
+  text-transform: uppercase;
+}
