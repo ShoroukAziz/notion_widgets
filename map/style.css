@@ -1,0 +1,19 @@
+#k1 {
+  width: 800px;
+  height: 400px;
+  padding-bottom: 0!important;
+}
+
+
+.datamaps-hoverover {
+  text-align: left;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #6bfa9d;
+  border: 1px;
+  border-radius: 2px;
+  pointer-events: none;
+  line-height: 130%;
+  color: black;
+  box-shadow: 1px 1px 1px 1px rgba(241, 239, 239, 0.75);
+}
