@@ -9,7 +9,7 @@ d3.json(worlddataUrl, function (datas) {
     var maxr = countries.length;
     var range = 0;
 
-    var color = d3.scale.linear(d3.interpolate).domain([0, maxr]).range(["rgb(0, 20,50)", "rgb(114, 247, 210)"]);
+   var color = d3.scale.linear(d3.interpolate).domain([0, maxr]).range(["rgb(100, 140, 110)", "rgb(170, 200, 170)"]);
     var colorbuble = d3.scale.ordinal(d3.interpolateSpectral(11)).domain([0, maxr]).range(d3.schemeSpectral[11]);
 
     var bubble_map = new Datamap({
