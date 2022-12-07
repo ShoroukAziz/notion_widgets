@@ -2,41 +2,41 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./style.css">
+  <title>Interactive Map</title>
+  <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/93930/leaflet.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <link rel="stylesheet" href="style.css">
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-
-<script src="https://d3js.org/topojson.v2.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.js"></script>
-<script src="https://d3js.org/d3-color.v1.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-</head>
-
-<body>
-<div id="k1"></div>
-
-
-</body>
+<!-- partial:index.partial.html -->
+<!--<!DOCTYPE html>-->
+<html ng-app="app">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <!--<script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="../dist/angular-leaflet-directive.min.js"></script>
+    <link rel="stylesheet" href="../bower_components/leaflet/dist/leaflet.css" />-->
+    <link rel="stylesheet" type="text/css" href="https://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
+  </head>
+  <body ng-controller="GermanMapCtrl">
+    <leaflet center="center" events="events" legend="legend" defaults="defaults" geojson="geojson"></leaflet>
+    <div class="map-box country-data f32">
+      <div class="col flag" ng-class="selectedCountryData.flag"></div>
+      <div class="col">
+        <span class="row">{{selectedCountryData.en.name || selectedCountry.properties.name || 'No country'}}</span>
+      </div>
+      <div class="col capital">
+        <span class="row">{{selectedCountryData.en.capital}}</span>
+      </div>
+    </div>
+    <div ng-show="showCenterCoords" class="map-box coordinates">center: {lat: {{center.lat | number:4}}, lng: {{center.lng | number:4}}, zoom: {{center.zoom}}}</div>
+  </body>
 </html>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/93930/angular-leaflet-directive.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>

@@ -1,23 +1,75 @@
-#k1 {
-  width: 600px;
-  height: 300px;
-  padding-bottom: 0!important;
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-
-.datamaps-hoverover {
-  text-align: left;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: #7bbe93;
-  border: 1px;
-  border-radius: 2px;
-  pointer-events: none;
-  line-height: 130%;
-  color: black;
-  box-shadow: 1px 1px 1px 1px rgba(241, 239, 239, 0.75);
+html {
+  font-family: sans-serif;
 }
 
-svg{
-  height: 300px !important;
+.map-box, .legend {
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 100;
+}
+
+.legend {
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 18px;
+  color: #555;
+  width: 100px;
+}
+.legend i {
+  clear: both;
+  width: 16px;
+  height: 16px;
+  float: left;
+  opacity: 0.7;
+  margin-right: 8px;
+}
+
+.map-box.coordinates {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.map-box.country-data {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 6px 16px;
+  line-height: 1.1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+}
+.map-box.country-data .col {
+  margin: auto;
+  padding-right: 16px;
+  float: left;
+}
+.map-box.country-data .col:before, .map-box.country-data .col:after {
+  content: " ";
+  display: table;
+}
+.map-box.country-data .col:after {
+  clear: both;
+}
+.map-box.country-data .col:last-child {
+  padding-right: 0;
+}
+.map-box.country-data .col .row {
+  display: block;
+}
+.map-box.country-data .capital {
+  font-size: 75%;
+}
+
+.angular-leaflet-map {
+  height: 100%;
 }
