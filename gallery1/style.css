@@ -1,5 +1,5 @@
 body {
-  background: #222;
+
   font-family: "Fira Sans", sans-serif;
   padding-right: 2rem;
 }
@@ -22,8 +22,6 @@ body {
 .gallery__strip__wrapper {
   flex: 0 0 100%;
   justify-content: flex-end;
-  background: #222;
-  border-right: 2px solid #333;
   position: relative;
 }
 
@@ -73,9 +71,8 @@ body {
   text-transform: uppercase;
   font-size: 40px;
   letter-spacing: 2px;
-  color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: #000;
   margin-top: -25px;
   transition: 0.4s ease-in-out 0.4s;
   position: relative;
