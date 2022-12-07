@@ -30,23 +30,23 @@ angular.module("app", ["leaflet-directive"])
   var continentProperties = {
     "150": {
       name: 'Europe',
-      colors: [ '#F00', '#C33', '#900', '#F33', '#F66' ]
+      colors: [ '#809bce', '#7291cc', '#6983b3', '#6d90d1', '#506ca1' ]
     },
     "019": {
       name: 'America',
-      colors: [ '#069', '#366', '#036', '#39C', '#69C' ]
+      colors: [ '#8a508f', '#b771bd', '#9f6fa3', '#865e8a', '#ac69b3' ]
     },
     "002": {
       name: 'Africa',
-      colors: [ '#0C0', '#393', '#090', '#3F3', '#6F6' ]
+      colors: [ '#b8e0d4', '#a3c4ba', '#a3d4c5', '#88bdad', '#91e3ca' ]
     },
     "142": {
       name: 'Asia',
-      colors: [ '#FC0', '#C93', '#990', '#FC3', '#FC6' ]
+      colors: [ '#eac4d5', '#eac4d5', '#dea0bc', '#d1a3b8', '#eda6c6' ]
     },
     "009": {
       name: 'Oceania',
-      colors: [ '#C06', '#936', '#906', '#C39', '#C69' ]
+      colors: [ '#d6eadf', '#deffed', '#bae3cd', '#9dc4af', '#cef0de' ]
     }
   };
   angular.extend($scope, {
@@ -56,7 +56,7 @@ angular.module("app", ["leaflet-directive"])
       zoom: 1 // 2
     },
     legend: {
-      colors: [ '#F00', '#069', '#0C0', '#FC0', '#C06' ],
+      colors: [ '#809bce', '#8a508f', '#b8e0d4', '#eac4d5', '#d6eadf' ],
       labels: [ 'Europe', 'America', 'Africa', 'Asia', 'Oceania' ]
     },
     defaults: {
