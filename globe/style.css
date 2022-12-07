@@ -1,0 +1,44 @@
+.globe{
+  position: relative;
+  margin-left: 300px;
+  margin-top: 200px;
+  height: 200px;
+  width: 200px;
+  
+}
+.go{
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: url("https://maprepublic.com/wp-content/uploads/2017/05/kanawa-world-map-large.jpg");
+  border-radius: 50%;
+  box-shadow: inset 25px 0px 35px 3px black;
+  background-size: 350px;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: rotate(-10deg);
+}
+
+.hand{
+  position: absolute;
+  height: 10px;
+  width: 120px;
+  background: black;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  transform: translatex(41px) translatey(205px)
+}
+.hand1{
+  position: absolute;
+  height: 5px;
+  width: 10px;
+  background: black;
+  transform: translatex(95px) translatey(200px)
+}
+
+@keyframes rotate {
+  from{ background-position: 0px;}
+  to{ background-position: 350px;}
+}
