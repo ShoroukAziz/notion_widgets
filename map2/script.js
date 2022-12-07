@@ -53,7 +53,7 @@ angular.module("app", ["leaflet-directive"])
     center: {
       lat: 57.0168, // 40.8471
       lng: 15.6445, // 14.0625
-      zoom: 2 // 2
+      zoom: 1 // 2
     },
     legend: {
       colors: [ '#F00', '#069', '#0C0', '#FC0', '#C06' ],
