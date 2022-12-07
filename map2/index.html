@@ -24,10 +24,7 @@
     <div class="map-box country-data f32">
       <div class="col flag" ng-class="selectedCountryData.flag"></div>
       <div class="col">
-        <span class="row">{{selectedCountryData.en.name || selectedCountry.properties.name || 'No country'}}</span>
-      </div>
-      <div class="col capital">
-        <span class="row">{{selectedCountryData.en.capital}}</span>
+        <span class="row">{{selectedCountryData.en.name || selectedCountry.properties.name || ''}}</span>
       </div>
     </div>
     <div ng-show="showCenterCoords" class="map-box coordinates">center: {lat: {{center.lat | number:4}}, lng: {{center.lng | number:4}}, zoom: {{center.zoom}}}</div>
