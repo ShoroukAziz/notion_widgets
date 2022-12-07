@@ -73,3 +73,7 @@ html {
 .angular-leaflet-map {
   height: 100%;
 }
+
+.leaflet-container{
+background-color: white;
+}
