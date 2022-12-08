@@ -12,9 +12,9 @@ body {
   margin: auto;
 }
 html {
-  background: #34495D;
+  background: #D6EADF;
   text-align: center;
-  color: #FFF;
+  color: #000;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   font-smooth: auto;
@@ -27,7 +27,7 @@ html {
 }
 .mileage__calculations small {
   font-size: 0.6em;
-  color: #ffa93a;
+  color: #000;
 }
 .mileage-map {
   display: block;
@@ -39,12 +39,12 @@ html {
   overflow: visible;
 }
 .mileage-map__states {
-  stroke: #34495D;
-  stroke-width: 2;
-  fill: #EE7738;
+  stroke: #393939;
+  stroke-width: 3;
+  fill: #EAC4D5;
 }
 .marker {
-  fill: #ffa93a;
+  fill: #B67793;
   stroke: #FFF;
   stroke-width: 5;
   cursor: pointer;
