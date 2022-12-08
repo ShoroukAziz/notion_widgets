@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiYA.ttf) format('truetype');
+}
+html {
+  height: 100%;
+  display: flex;
+}
+body {
+  margin: auto;
+}
+html {
+  background: #34495D;
+  text-align: center;
+  color: #FFF;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-smooth: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.mileage__calculations {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: inherit;
+}
+.mileage__calculations small {
+  font-size: 0.6em;
+  color: #ffa93a;
+}
+.mileage-map {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90vh;
+  margin: auto auto 2rem;
+  overflow: visible;
+}
+.mileage-map__states {
+  stroke: #34495D;
+  stroke-width: 2;
+  fill: #EE7738;
+}
+.marker {
+  fill: #ffa93a;
+  stroke: #FFF;
+  stroke-width: 5;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.marker > * {
+  transition: transform 0.3s cubic-bezier(0.6, 0, 0.5, 1);
+}
+.marker text {
+  stroke: none;
+  fill: #FFF;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 200;
+}
+.marker-fade-leave-active,
+.marker-fade-enter-active {
+  transition: opacity 0.3s linear;
+}
+.marker-fade-enter,
+.marker-fade-leave-to {
+  opacity: 0;
+}
+.marker--current {
+  opacity: 0.8;
+  pointer-events: none;
+}
+.marker--current > * {
+  transform: scale(0.8);
+}
+/* ////////////////////////////////////////////////////////////////////////// */
+.airport {
+  fill: #FFF;
+  stroke-width: 2;
+  stroke: transparent;
+  transition: stroke 0.3s linear;
+}
+.airport:hover {
+  stroke: rgba(255, 255, 255, 0.3);
+}
+.airport--current,
+.airport--current:hover {
+  stroke: #FFF;
+  stroke: rgba(255, 255, 255, 0.8);
+}
+.airport__range {
+  fill: transparent;
+  cursor: pointer;
+}
+.marker-connector {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 3;
+  stroke-dasharray: 6 6;
+  pointer-events: none;
+  -webkit-animation: marching-ants 1s linear 0s infinite;
+          animation: marching-ants 1s linear 0s infinite;
+}
+@-webkit-keyframes marching-ants {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12;
+  }
+}
+@keyframes marching-ants {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12;
+  }
+}
+.airplane {
+  pointer-events: none;
+  fill: #FFF;
+  opacity: 0;
+}

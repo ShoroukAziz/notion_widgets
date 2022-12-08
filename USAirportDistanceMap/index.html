@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Airport Distance Map</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app" class="mileage">
+
+  <svg class="mileage-map" ref="map" width="1200" height="780" viewBox="-120 -180 1200 780">
+
+    <g class="mileage-map__states" ref="states"></g>
+
+    <g ref="airports">
+      <g class="airport" :class="{ 'airport--current' : airport.current }"
+         v-for="airport in airports">
+        <circle r="3" :cx="airport.x" :cy="airport.y" class="airport__marker" />
+        <circle r="16" :cx="airport.x" :cy="airport.y" class="airport__range"
+                @mousemove="airportSnap($event, airport)"
+                @mouseup="airportClick($event, airport)"
+                @mouseleave.self="airportLeave($event, airport)" />
+      </g>
+    </g>
+
+    <path class="marker-connector" :d="markerConnect()"></path>
+
+    <g class="airplane" ref="airplane">
+      <path class="airplane__icon" d="M21 15.984l-8.016-2.484v5.484l2.016 1.5v1.5l-3.516-0.984-3.469 0.984v-1.5l1.969-1.5v-5.484l-7.969 2.484v-1.969l7.969-5.016v-5.484c0-0.844 0.656-1.5 1.5-1.5s1.5 0.656 1.5 1.5v5.484l8.016 5.016v1.969z" transform="translate(-8,-15) scale(1.2)"></path>
+    </g>
+
+    <g v-for="marker in markers" @mousedown="markerSet($event,marker)" class="marker" :class="{ 'marker--current' : marker.current }" :transform="'translate('+marker.x+','+marker.y+')'">
+      <path fill="{{marker.fill}}" d="M0 0l28.592-28.592c15.78-15.78 15.908-41.24.128-57.02a40.424 40.424 0 0 0-57.124 57.2z"></path>
+      <transition name="marker-fade">
+        <text v-if="marker.airport" x="0" y="-42" text-anchor="middle" v-text="marker.airport.LocationID"></text>
+      </transition>
+    </g>
+  </svg>
+
+  <h1 class="mileage__calculations" v-show="distance">
+    <span>{{ distance | numberWithCommas }}</span><small>mi</small>
+  </h1>
+  
+  <div class="mileage__instructions">Drag the markers around to calculate distance</div>
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js'></script>
+<script src='//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js'></script>
+<script src='https://codepen.io/shshaw/pen/epmrgO.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
