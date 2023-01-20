@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>	
-    <body>
-<button onclick="navigate()">
+<html>
+
+<body style="text-align:center;">
+	<iframe id="gfgFrame" src="https://shoroukaziz.github.io/notion_widgets/tests/test.html"
+		style="height: 50vh; width: 600px;">
+
+	<button onclick="navigate()">
 		Click it
 	</button>
 
 	<script>
 		function navigate() {
-			window.parent.location.href = "http://www.example.com"; 
+      window.open("https://example.com", '_blank').focus();
+
 		}
 	</script>
-  
-  </body>
+
+	</iframe>
+
+
+
+</body>
 
 </html>
