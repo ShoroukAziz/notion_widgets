@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+
+<style>
+  body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+button {
+  display: inline-block;
+  margin: 50px;
+  font-family: inherit;
+  min-width: 200px;
+}
+/* End of Page styling */
+
+
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 15px 25px 15px;
+  outline: 0;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 5px;
+  left: 5px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+.pink::after{
+  background-color: #fe95ba;
+}
+
+.orange::after{
+  background-color: #fec92d;
+}
+</style>
+
+</head>
+<body>
+  <button id="gumroad" onclick="navigate(this.id)" id="inbox" type="button" class="fill pink"><i class="fa-solid fa-g" style="transform: rotate(-20deg);"></i> Gumroad</button>
+  <button id="etsy" onclick="navigate(this.id)" id="inbox" type="button" class="fill orange"><i class="fa-sharp fa-solid fa-e" style="transform: rotate(-20deg);"></i> Etsy</button>
+
+
+
+  <script>
+    function navigate(id) {
+      if(id === "gumroad")
+      window.open("https://shorouk.gumroad.com/", '_blank').focus();
+      else{
+        window.open("https://www.etsy.com/ca/shop/ShorouksStore", '_blank').focus();
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
