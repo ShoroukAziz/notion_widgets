@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+
+  <!-- Awesome fonts -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!-- Roboto font -->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<style>
+  /*
+    Auther: Abdelrhman Said
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  /* width: 100%; */
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .blog:hover,
+.wrapper .blog:hover .tooltip,
+.wrapper .blog:hover .tooltip::before {
+  background: #f2c618;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .pinterest:hover,
+.wrapper .pinterest:hover .tooltip,
+.wrapper .pinterest:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+
+</style>
+
+</head>
+<body>
+
+  <ul onclick="navigate(this.id)" id="blog" class="wrapper">
+    <li class="icon blog">
+      <span class="tooltip">Blog</span>
+      <span><i class="fa-solid fa-blog"></i></span>
+    </li>
+    <li onclick="navigate(this.id)" id="twitter"  class="icon twitter">
+      <span class="tooltip">Twitter</span>
+      <span><i class="fab fa-twitter"></i></span>
+    </li>
+
+    <li onclick="navigate(this.id)" id="youtube"  class="icon youtube">
+      <span class="tooltip">Youtube</span>
+      <span><i class="fab fa-youtube"></i></span>
+    </li>
+       
+    <li onclick="navigate(this.id)" id="pinterest"  class="icon pinterest">
+      <span class="tooltip">Pinterest</span>
+      <span><i class="fab fa-pinterest"></i></span>
+    </li>
+  </ul>
+ 
+  <script>
+    function navigate(id) {
+      if(id === "blog")
+        window.open("https://blog.shorouk.dev/", '_blank').focus();
+      else if (id === "twitter"){
+        window.open("https://twitter.com/ShoroukSAziz", '_blank').focus();
+      }
+      else if (id === "youtube"){
+        window.open("https://www.youtube.com/@shorouksaziz", '_blank').focus();
+      }
+      else if (id === "pinterest"){
+        window.open("https://www.pinterest.ca/organizing_wonderland/", '_blank').focus();
+      }
+    }
+
+  </script>
+
+</body>
+</html>
