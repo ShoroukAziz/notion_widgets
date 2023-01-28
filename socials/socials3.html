@@ -35,7 +35,7 @@
       font-size: 20px;
       width: 50px;
       height: 50px;
-      padding:2%;
+      padding: 2%;
       color: #fff;
       outline: 0;
       border: 2px solid black;
@@ -66,40 +66,59 @@
       font-size: 1.2em;
     }
 
-    .blog:hover , .blog::after {
-      background-color: #fff09e;
+    .blog:hover,
+    .blog::after {
+      background-color: #ffbd2f;
     }
 
-    .facebook:hover  , .facebook::after {
-      background-color: #86a8ec;
+    .email:hover,
+    .email::after {
+      background-color: #23c8c8;
     }
 
-    .instagram:hover  , .instagram::after{
-      background: #ffa7f0;
+    .facebook:hover,
+    .facebook::after {
+      background-color: #4267B2;
     }
 
-    .linkedin:hover , .linkedin::after {
-      background-color: #3c87a9;
+    .instagram:hover,
+    .instagram::after {
+      background: #f86ee1;
     }
 
-    .twitter:hover , .twitter::after {
-      background-color: #56bae5;
+    .linkedin:hover,
+    .linkedin::after {
+      background-color: #0e76a8;
     }
 
-    .reddit:hover  , .reddit::after{
-      background-color: #fa794a;
+    .twitter:hover,
+    .twitter::after {
+      background-color: #26a7de;
     }
 
-    .tiktok:hover , .tiktok::after {
-      background-color: rgb(248, 110, 154);
+    .reddit:hover,
+    .reddit::after {
+      background-color: #ff4500;
     }
 
-    .youtube:hover , .youtube::after {
-      background-color: #ff6666;
+    .tiktok:hover,
+    .tiktok::after {
+      background-color: #ff0050;
     }
 
-    .pinterest:hover  , .pinterest::after{
-      background-color: #cb4f55;
+    .youtube:hover,
+    .youtube::after {
+      background-color: #FF0000;
+    }
+
+    .pinterest:hover,
+    .pinterest::after {
+      background-color: #c8232c;
+    }
+
+    .telegram:hover,
+    .telegram::after {
+      background-color: #2AABEE;
     }
 
     .social {
@@ -121,41 +140,79 @@
 
     <div class="wrapper">
 
+      <!-- Start blog Icon -->
       <div id="blog" onclick="navigate(this.id)" class="fill  blog">
         <span class="icon"><i class="fa-solid fa-blog"></i></span>
       </div>
+      <!-- End blog Icon -->
 
+
+      <!-- Start email Icon -->
+      <div id="email" onclick="navigate(this.id)" class="fill email">
+        <span class="icon email"><i class="fa-solid fa-envelope"></i></span>
+      </div>
+      <!-- End email Icon -->
+
+
+      <!-- Start facebook Icon -->
       <div id="facebook" onclick="navigate(this.id)" class="fill facebook">
         <span class="icon"><i class="fab fa-facebook"></i></span>
       </div>
+      <!-- End facebook Icon -->
 
+
+      <!-- Start instagram Icon -->
       <div id="instagram" onclick="navigate(this.id)" class="fill instagram">
         <span class="icon"><i class="fab fa-instagram"></i></span>
       </div>
+      <!-- End instagram Icon -->
 
+
+      <!-- Start linkedin Icon -->
       <div id="linkedin" onclick="navigate(this.id)" class="fill linkedin">
         <span class="icon"><i class="fab fa-linkedin"></i></span>
       </div>
+      <!-- End linkedin Icon -->
 
+
+      <!-- Start twitter Icon -->
       <div id="twitter" onclick="navigate(this.id)" class="fill twitter">
         <span class="icon"><i class="fab fa-twitter"></i></span>
       </div>
+      <!-- End twitter Icon -->
 
+
+      <!-- Start reddit Icon -->
       <div id="reddit" onclick="navigate(this.id)" class="fill reddit">
         <span class="icon"><i class="fab fa-reddit"></i></span>
       </div>
+      <!-- End reddit Icon -->
 
+
+      <!-- Start tiktok Icon -->
       <div id="tiktok" onclick="navigate(this.id)" class="fill tiktok">
         <span class="icon"><i class="fab fa-tiktok"></i></span>
       </div>
+      <!-- End tiktok Icon -->
 
+      <!-- Start youtube Icon -->
       <div id="youtube" onclick="navigate(this.id)" class="fill youtube">
         <span class="icon"><i class="fab fa-youtube"></i></span>
       </div>
+      <!-- End youtube Icon -->
 
+      <!-- Start pinterest Icon -->
       <div id="pinterest" onclick="navigate(this.id)" class="fill pinterest">
         <span class="icon"><i class="fab fa-pinterest"></i></span>
       </div>
+      <!-- End pinterest Icon -->
+
+
+      <!-- Start telegram Icon -->
+      <div id="telegram" onclick="navigate(this.id)" class="fill telegram">
+        <span class="icon"><i class="fab fa-telegram"></i></span>
+      </div>
+      <!-- End telegram Icon -->
 
 
     </div>
@@ -171,11 +228,14 @@
         if (id === "blog")
           window.open("https://blog.shorouk.dev", '_blank').focus(); //Add the url to your blog
 
+        else if (id === "email") {
+          window.open("mailto:someone@yoursite.com", '_blank').focus(); //Add your email after "mailto:""
+        }
         else if (id === "facebook") {
           window.open("https://facebook.com/", '_blank').focus(); //Add the url to your facebook page or account
         }
         else if (id === "instagram") {
-          window.open("https://instagram.com", '_blank').focus(); //Add the url to your instagram account
+          window.open("instagram.com", '_blank').focus(); //Add the url to your instagram account
         }
         else if (id === "linkedin") {
           window.open("https://www.linkedin.com/", '_blank').focus(); //Add the url to your pinterest account
@@ -194,6 +254,9 @@
         }
         else if (id === "pinterest") {
           window.open("https://www.pinterest.com/", '_blank').focus(); //Add the url to your pinterest account
+        }
+        else if (id === "telegram") {
+          window.open("https://web.telegram.org/", '_blank').focus(); //Add the url to your telegram account
         }
       }
 
