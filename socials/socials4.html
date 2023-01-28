@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<!-- Auther: Shorouk Abdelaziz  https://shorouk.dev -->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Socials</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+    }
+
+    .wrapper {
+      padding-top: 10px;
+      display: inline-flex;
+
+    }
+
+    .fill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      outline: 0;
+      cursor: pointer;
+      position: relative;
+      margin: 5px;
+      background-color: #4b4b4b;
+    }
+
+    .icon {
+      font-size: 1em;
+    }
+
+    .blog:hover{
+      background-color: #ffbd2f;
+    }
+
+    .email:hover{
+      background-color: #23c8c8;
+    }
+
+    .facebook:hover{
+      background-color: #4267B2;
+    }
+
+    .instagram:hover{
+      background: #f86ee1;
+    }
+
+    .linkedin:hover{
+      background-color: #0e76a8;
+    }
+
+    .twitter:hover{
+      background-color: #26a7de;
+    }
+
+    .reddit:hover{
+      background-color: #ff4500;
+    }
+
+    .tiktok:hover{
+      background-color: #ff0050;
+    }
+
+    .youtube:hover{
+      background-color: #FF0000;
+    }
+
+    .pinterest:hover{
+      background-color: #c8232c;
+    }
+
+    .telegram:hover{
+      background-color: #2AABEE;
+    }
+
+    .social {
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .social:hover {
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <body>
+
+    <div class="wrapper">
+
+      <!-- Start blog Icon -->
+      <div id="blog" onclick="navigate(this.id)" class="fill  blog">
+        <span class="icon"><i class="fa-solid fa-blog"></i></span>
+      </div>
+      <!-- End blog Icon -->
+
+
+      <!-- Start email Icon -->
+      <div id="email" onclick="navigate(this.id)" class="fill email">
+        <span class="icon email"><i class="fa-solid fa-envelope"></i></span>
+      </div>
+      <!-- End email Icon -->
+
+
+      <!-- Start facebook Icon -->
+      <div id="facebook" onclick="navigate(this.id)" class="fill facebook">
+        <span class="icon"><i class="fab fa-facebook"></i></span>
+      </div>
+      <!-- End facebook Icon -->
+
+
+      <!-- Start instagram Icon -->
+      <div id="instagram" onclick="navigate(this.id)" class="fill instagram">
+        <span class="icon"><i class="fab fa-instagram"></i></span>
+      </div>
+      <!-- End instagram Icon -->
+
+
+      <!-- Start linkedin Icon -->
+      <div id="linkedin" onclick="navigate(this.id)" class="fill linkedin">
+        <span class="icon"><i class="fab fa-linkedin"></i></span>
+      </div>
+      <!-- End linkedin Icon -->
+
+
+      <!-- Start twitter Icon -->
+      <div id="twitter" onclick="navigate(this.id)" class="fill twitter">
+        <span class="icon"><i class="fab fa-twitter"></i></span>
+      </div>
+      <!-- End twitter Icon -->
+
+
+      <!-- Start reddit Icon -->
+      <div id="reddit" onclick="navigate(this.id)" class="fill reddit">
+        <span class="icon"><i class="fab fa-reddit"></i></span>
+      </div>
+      <!-- End reddit Icon -->
+
+
+      <!-- Start tiktok Icon -->
+      <div id="tiktok" onclick="navigate(this.id)" class="fill tiktok">
+        <span class="icon"><i class="fab fa-tiktok"></i></span>
+      </div>
+      <!-- End tiktok Icon -->
+
+      <!-- Start youtube Icon -->
+      <div id="youtube" onclick="navigate(this.id)" class="fill youtube">
+        <span class="icon"><i class="fab fa-youtube"></i></span>
+      </div>
+      <!-- End youtube Icon -->
+
+      <!-- Start pinterest Icon -->
+      <div id="pinterest" onclick="navigate(this.id)" class="fill pinterest">
+        <span class="icon"><i class="fab fa-pinterest"></i></span>
+      </div>
+      <!-- End pinterest Icon -->
+
+
+      <!-- Start telegram Icon -->
+      <div id="telegram" onclick="navigate(this.id)" class="fill telegram">
+        <span class="icon"><i class="fab fa-telegram"></i></span>
+      </div>
+      <!-- End telegram Icon -->
+
+
+    </div>
+
+
+
+
+    <script>
+      function navigate(id) {
+
+        //if you want the URL to open in the same window use '_parent'  instead of '_blank'
+
+        if (id === "blog")
+          window.open("https://blog.shorouk.dev", '_blank').focus(); //Add the url to your blog
+
+        else if (id === "email") {
+          window.open("mailto:someone@yoursite.com", '_blank').focus(); //Add your email after "mailto:""
+        }
+        else if (id === "facebook") {
+          window.open("https://facebook.com/", '_blank').focus(); //Add the url to your facebook page or account
+        }
+        else if (id === "instagram") {
+          window.open("instagram.com", '_blank').focus(); //Add the url to your instagram account
+        }
+        else if (id === "linkedin") {
+          window.open("https://www.linkedin.com/", '_blank').focus(); //Add the url to your pinterest account
+        }
+        else if (id === "twitter") {
+          window.open("https://twitter.com/", '_blank').focus(); //Add the url to your pinterest account
+        }
+        else if (id === "reddit") {
+          window.open("https://www.reddit.com/", '_blank').focus(); //Add the url to your reddit account
+        }
+        else if (id === "tiktok") {
+          window.open("https://www.tiktok.com/", '_blank').focus(); //Add the url to your tiktok account
+        }
+        else if (id === "youtube") {
+          window.open("https://www.youtube.com/", '_blank').focus(); //Add the url to your youtube account
+        }
+        else if (id === "pinterest") {
+          window.open("https://www.pinterest.com/", '_blank').focus(); //Add the url to your pinterest account
+        }
+        else if (id === "telegram") {
+          window.open("https://web.telegram.org/", '_blank').focus(); //Add the url to your telegram account
+        }
+      }
+
+    </script>
+
+
+
+  </body>
+
+</html>
