@@ -43,6 +43,10 @@
       color: #ffbd2f;
     }
 
+    .email:hover {
+      color: #23c8c8;
+    }
+
     .facebook:hover {
       color: #4267B2;
     }
@@ -75,6 +79,10 @@
       color: #c8232c;
     }
 
+    .telegram:hover {
+      color: #2AABEE;
+    }
+
     .social{
       position: relative;
       margin: 10px;
@@ -94,6 +102,10 @@
 
       <div id="blog" onclick="navigate(this.id)" class="social">
         <span class="icon blog"><i class="fa-solid fa-blog"></i></span>
+      </div>
+
+      <div id="email" onclick="navigate(this.id)" class="social">
+        <span class="icon email"><i class="fa-solid fa-envelope"></i></span>
       </div>
 
       <div id="facebook" onclick="navigate(this.id)" class="social">
@@ -123,11 +135,16 @@
       <div id="youtube" onclick="navigate(this.id)" class="social">
         <span class="icon youtube"><i class="fab fa-youtube"></i></span>
       </div>
-
       
       <div id="pinterest" onclick="navigate(this.id)" class="social">
         <span class="icon pinterest"><i class="fab fa-pinterest"></i></span>
       </div>
+
+      <div id="telegram" onclick="navigate(this.id)" class="social">
+        <span class="icon telegram"><i class="fab fa-telegram"></i></span>
+      </div>
+      
+
 
 
     </div>
@@ -143,11 +160,15 @@
         if (id === "blog")
           window.open("https://blog.shorouk.dev", '_blank').focus(); //Add the url to your blog
 
+        else if (id === "email") {
+          window.open("mailto:someone@yoursite.com", '_blank').focus(); //Add your email after "mailto:""
+        } 
+
         else if (id === "facebook") {
           window.open("https://facebook.com/", '_blank').focus(); //Add the url to your facebook page or account
         }
         else if (id === "instagram") {
-          window.open("https://instagram.com", '_blank').focus(); //Add the url to your instagram account
+          window.open("instagram.com", '_blank').focus(); //Add the url to your instagram account
         }
         else if (id === "linkedin") {
           window.open("https://www.linkedin.com/", '_blank').focus(); //Add the url to your pinterest account
@@ -166,6 +187,9 @@
         }
         else if (id === "pinterest") {
           window.open("https://www.pinterest.com/", '_blank').focus(); //Add the url to your pinterest account
+        }
+        else if (id === "telegram") {
+          window.open("https://web.telegram.org/", '_blank').focus(); //Add the url to your telegram account
         }
       }
 
