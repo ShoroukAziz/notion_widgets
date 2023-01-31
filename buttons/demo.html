@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <style>
+    :root {
+      --my-color:#34495e;
+      --my-color-accent:#2c3e50;
+      --black: #3c3c3c;
+      --black-accent: #2d2d2d;
+      --blue: #809bce;
+      --blue-accent: #5c6f94;
+      --purple: #8a508f;
+      --purple-accent: #5d3661;
+      --mint: #b8e0d4;
+      --mint-accent: #8ba89f;
+      --pink: #eac4d5;
+      --pink-accent: #b495a3;
+      --green: #74a892;
+      --green-accent: #5e8675;
+      --red:#d74a49;
+      --red-accent:#b53f3f;
+      --orange:#d35400;
+      --orange-accent:#9e4102;
+      --yellow:#f1c40f;
+      --yellow-accent:#bd9a0c;
+    }
+
+    button {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+    }
+
+    i {
+      padding-right: 2px;
+    }
+
+    .btn {
+      text-align: center;
+      color: #ffffff;
+      font-family: 'Manrope';
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .my-color {
+      background-color: var(--my-color);
+    }
+
+    .my-color:hover {
+      background-color: var(--my-color-accent);
+    }
+
+    .my-color.threeD {
+      box-shadow: 0px 4px 0px var(--my-color-accent);
+    }
+
+    .my-color.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--my-color-accent);
+    }
+    .black {
+      background-color: var(--black);
+    }
+
+    .black:hover {
+      background-color: var(--black-accent);
+    }
+
+    .black.threeD {
+      box-shadow: 0px 4px 0px var(--black-accent);
+    }
+
+    .black.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--black-accent);
+    }
+
+    .blue {
+      background-color: var(--blue);
+    }
+
+    .blue:hover {
+      background-color: var(--blue-accent);
+    }
+
+    .blue.threeD {
+      box-shadow: 0px 4px 0px var(--blue-accent);
+    }
+
+    .blue.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--blue-accent);
+    }
+
+    .purple {
+      background-color: var(--purple);
+    }
+
+    .purple:hover {
+      background-color: var(--purple-accent);
+    }
+
+    .purple.threeD {
+      box-shadow: 0px 4px 0px var(--purple-accent);
+    }
+
+    .purple.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--purple-accent);
+    }
+
+    .mint {
+      background-color: var(--mint);
+    }
+
+    .mint:hover {
+      background-color: var(--mint-accent);
+    }
+
+    .mint.threeD {
+      box-shadow: 0px 4px 0px var(--mint-accent);
+    }
+
+    .mint.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--mint-accent);
+    }
+
+    .pink {
+      background-color: var(--pink);
+    }
+
+    .pink:hover {
+      background-color: var(--pink-accent);
+    }
+
+    .pink.threeD {
+      box-shadow: 0px 4px 0px var(--pink-accent);
+    }
+
+    .pink.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--pink-accent);
+    }
+
+    .green {
+      background-color: var(--green);
+    }
+
+    .green:hover {
+      background-color: var(--green-accent);
+    }
+
+    .green.threeD {
+      box-shadow: 0px 4px 0px var(--green-accent);
+    }
+
+    .green.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--green-accent);
+    }
+
+    .red {
+      background-color: var(--red);
+    }
+
+    .red:hover {
+      background-color: var(--red-accent);
+    }
+
+    .red.threeD {
+      box-shadow: 0px 4px 0px var(--red-accent);
+    }
+
+    .red.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--red-accent);
+    }
+
+    .orange {
+      background-color: var(--orange);
+    }
+
+    .orange:hover {
+      background-color: var(--orange-accent);
+    }
+
+    .orange.threeD {
+      box-shadow: 0px 4px 0px var(--orange-accent);
+    }
+
+    .orange.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--orange-accent);
+    }
+
+    .yellow {
+      background-color: var(--yellow);
+    }
+
+    .yellow:hover {
+      background-color: var(--yellow-accent);
+    }
+
+    .yellow.threeD {
+      box-shadow: 0px 4px 0px var(--yellow-accent);
+    }
+
+    .yellow.threeD:active {
+      box-shadow: 0 0;
+      background-color: var(--yellow-accent);
+    }
+
+    .rounded {
+      border-radius: 20px;
+    }
+
+    .small {
+      padding: 5px 20px;
+      font-size: 10px;
+    }
+
+    .mid {
+      padding: 10px 40px;
+      font-size: 12px;
+    }
+
+    .large {
+      padding: 15px 60px;
+      font-size: 18px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+ 
+
+      <button class="btn mid mint rounded threeD" type="button" onclick="navigate()"> <i class="fa-regular fa-address-book"></i>
+        My Contacts</button>
+      <button class="btn mid yellow rounded threeD" type="button" onclick="navigate()"><i class="fa-regular fa-images"></i>
+        My Photos</button>
+      <button class="btn mid red rounded threeD" type="button" onclick="navigate()"> <i class="fa-regular fa-folder-closed"></i>
+        My Files</button>
+    <button class="btn mid purple rounded threeD" type="button" onclick="navigate()"> <i class="fa-regular fa-calendar-days"></i> My Calendar</button>
+
+  <script>
+    function navigate() {
+      window.open("https://example.com", '_blank').focus();
+    }
+
+  </script>
+
+</body>
+
+</html>
