@@ -7,9 +7,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 	<!-- Google Font -->
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
 	<!-------->
 
 	<style>
@@ -22,7 +24,6 @@
 
 
 		.navMenu {
-			/* Change font family here */
 			font-family: 'Advent Pro', sans-serif;
 			padding: 8px;
 			text-align: center;
@@ -31,7 +32,6 @@
 		}
 
 		.navMenu a {
-			/* Change font color here */
 			color: #272727;
 			text-decoration: none;
 			text-transform: uppercase;
@@ -40,18 +40,16 @@
 		}
 
 		.background {
-			/* Change background color here */
 			background-color: #ece5f0;
 		}
 
 		.border {
-			/* Change border color & thickness here */
 			border: 1px solid #cccccc;
 
 		}
 
 		.navMenu a:hover {
-			/* Change on hover font color here */
+
 			color: #d09c0b;
 		}
 	</style>
@@ -71,7 +69,6 @@
 		<a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Notes</a>
 		<a id="media" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bookmark"></i> Media</a>
 		<a id="resourses" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> Resourses</a>
-		<a id="recipies" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bowl-rice"></i> Recipes</a>
 		<a id="lifewiki" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart"></i> Lifewiki</a>
 
 
@@ -81,8 +78,7 @@
 
 	<script>
 
-		let direction = "horizontal";  //Change nav bar direction here
-		
+		let direction = "vertical";
 		if (direction === "vertical") {
 			document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px}</style>`)
 		}
@@ -91,33 +87,31 @@
 		function navigate(id) {
 
 			if (id == 'home')
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Home-743cb734ac4c41ee90896e039f0dd917", '_blank').focus();
 			else if (id == "inbox")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Inbox-91a8ce98118147d384c511c67833bb6d", '_blank').focus();
 			else if (id == "week")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/shorouk/This-Week-bd3171730a4c4a9097399770acde9882", '_blank').focus();
 			else if (id == "month")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/shorouk/This-Month-c18ee8ef9c754f088670caa55df0b0e0", '_blank').focus();
 			else if (id == "projects")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Projects-e6745abbeaf0418aab7b9f6c57f3aba0", '_blank').focus();
 			else if (id == "business")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/shorouk/Business-Dashboard-75f3e1cb7d0a4895929ec5feed780e55", '_blank').focus();
 			else if (id == "tasks")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "recipes")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Task-Manager-48ea6f04eaf24aa0889a5b5de34ea415", '_blank').focus();
 			else if (id == "knowledge")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/My-Knowledge-Base-7b003813544d478b9f61d813cfaefae5", '_blank').focus();
 			else if (id == "topics")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Topics-Browser-bb6d50722de74a0e8cc2e678e76b0a44", '_blank').focus();
 			else if (id == "notes")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/The-Notebook-6939d2ac0fa84089a3c83ca657c9cdfb", '_blank').focus();
 			else if (id == "media")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Multimedia-Library-74c4d2eea2fc4f25b3fdebaaea4de2c3", '_blank').focus();
 			else if (id == "resourses")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/Resources-Library-766dde1a6f1e4a3499b9d65a8013e5e3", '_blank').focus();
 			else if (id == "lifewiki")
-				window.open("https://example.com", '_blank').focus();
+				window.open("https://www.notion.so/My-Life-wiki-51e257c76f984c2cb58858573a101989", '_blank').focus();
 
 		}
 	</script>
