@@ -19,7 +19,14 @@ body{
   font-size: .7em;
   letter-spacing: 5px;
 }
-
+.title {
+  display: block;
+  padding: 20px;
+  width:100px;
+  border-radius: 5px;
+  background: white;
+  
+}
 .days, .hours, .minutes, .seconds {
   display: inline-block;
   padding: 20px;
@@ -32,7 +39,7 @@ body{
 }
 
 .hours {
-  background: #eeeeee;
+  background: #628074;
   color: #183059;
 }
 
@@ -50,6 +57,16 @@ body{
   font-size: 4em;
   text-align: center;
 }
+.name {
+
+  font-family: 'Montserrat', sans-serif;
+  color:  #183059;
+  padding-top: 15px;
+  font-size: 19px;
+  text-align: center;
+}
+
+
 
 .white {
   position: absolute;
@@ -96,14 +113,17 @@ body{
         <div  id="minutes" class="numbers"> </div>minutes</div> 
       <div   class="seconds"> 
         <div id="seconds" class="numbers"> </div>seconds</div> 
+        
+        <div id="title" class="name"> </div></div>
       </div>
+
 
 </div>
 
 </body>
 <script>
     const year = new Date().getFullYear();
-const myDate = new Date('Oct 15, 2024 00:00:00');
+const myDate = new Date('Apr 15, 2023 00:00:00');
 console.log(myDate);
 
 // countdown
@@ -121,11 +141,14 @@ let timer = setInterval(function() {
   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
+  //title
+  let title = "Launch Countdown!"
   // display
   document.getElementById("days").innerHTML=days
   document.getElementById("hours").innerHTML=hours
   document.getElementById("minutes").innerHTML=minutes
   document.getElementById("seconds").innerHTML=seconds
+  document.getElementById("title").innerHTML=title
 
 
 
