@@ -63,10 +63,21 @@ button {
 .orange::after{
   background-color: #fec92d;
 }
+
+  .black{
+    color: #fff
+  }
+
+  .black::after{
+  background-color: #000000;
+}
+
+  
 </style>
 
 </head>
 <body>
+  <button id="notion" onclick="navigate(this.id)" id="inbox" type="button" class="fill black"><i class="fa-sharp fa-solid fa-n" style="transform: rotate(-20deg);"></i> Notion Market Place</button>
   <button id="gumroad" onclick="navigate(this.id)" id="inbox" type="button" class="fill pink"><i class="fa-solid fa-g" style="transform: rotate(-20deg);"></i> Gumroad</button>
   <button id="etsy" onclick="navigate(this.id)" id="inbox" type="button" class="fill orange"><i class="fa-sharp fa-solid fa-e" style="transform: rotate(-20deg);"></i> Etsy</button>
 
@@ -76,6 +87,9 @@ button {
     function navigate(id) {
       if(id === "gumroad")
       window.open("https://shorouk.gumroad.com/", '_blank').focus();
+      else if(id === "notion"){
+        window.open("https://www.notion.so/marketplace/creators/shorouk-abdelaziz", '_blank').focus();
+      }
       else{
         window.open("https://www.etsy.com/ca/shop/ShorouksStore", '_blank').focus();
 
